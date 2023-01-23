@@ -1,16 +1,14 @@
 import parseTrackInfo from './utils/parseTrackInfo';
-import { Options, Curators, OutputService, NumberOfResults } from './types';
-
-const defaultOptions = {
-	curator: <Curators>['nts'],
-	outputService: <OutputService>'youtube',
-	numberOfResults: <NumberOfResults>1,
-};
-
-const crater = (url: string, options: Options = defaultOptions) => {
-	return { url, options };
-};
-
-module.exports = crater;
+import validateTrackInfo from './utils/validateTrackInfo';
+import getMusicRecc from './utils/getMusicRecc';
+export default function crater(): void {
+	return;
+}
 
 crater.getInfo = parseTrackInfo;
+
+crater.validateInfo = validateTrackInfo;
+
+crater.recommend = getMusicRecc;
+
+module.exports = crater;
